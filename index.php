@@ -16,4 +16,5 @@ $queryBuilder = $connection->createQueryBuilder();
 $queryBuilder->select('*')->from('users');
 
 $paginationBuilder = new \App\Pagination\Builder($queryBuilder);
-$paginationBuilder->paginate($_GET['page'] ?? 1, 10);
+
+$users = $paginationBuilder->paginate($_GET['page'] ?? 1, 10);
