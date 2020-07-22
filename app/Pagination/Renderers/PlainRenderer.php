@@ -52,10 +52,14 @@ class PlainRenderer extends RendererAbstract
      *
      * @param [type] $page
      * @param array $extra
-     * @return void
+     * @return string
      */
     protected function query($page, array $extra = [])
     {
-        return '?page=' . $page . '&' . http_build_query($extra);
+        if (!empty($extra)) {
+            return '?page=' . $page . '&' . http_build_query($extra);
+        }
+
+        return '?page=' . $page;
     }
 }
