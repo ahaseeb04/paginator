@@ -18,7 +18,7 @@ $paginationBuilder = new \App\Pagination\Builder($queryBuilder);
 $users = $paginationBuilder->paginate($_GET['page'] ?? 1, 10);
 
 foreach ($users->get() as $user) {
-    echo $user['id'] . ': ' . $user['first_name'] . '<br>';
+    echo '<p>' . $user['id'] . ': ' . $user['first_name'] . '</p>';
 }
 
 echo $users->render();

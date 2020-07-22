@@ -101,7 +101,7 @@ class PageIterator implements Iterator
      */
     public function next()
     {
-        ++$this->position;
+        $this->position++;
     }
 
     /**
